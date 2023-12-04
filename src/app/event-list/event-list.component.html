@@ -1,0 +1,13 @@
+<div *ngFor="let event of events">
+    <h3>
+        <a [title]="event.title + ' details'">
+            {{ event.title }}
+        </a>
+    </h3>
+
+    <!-- <p *ngIf="event.description">Description: {{ event.description }}</p> -->
+
+    <button type="button" (click)="showDetail(event)">Show Details</button>
+
+    <app-event-alerts [event]="event" (notify)="onNotify()"></app-event-alerts>
+</div>
